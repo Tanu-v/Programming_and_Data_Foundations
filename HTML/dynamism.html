@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Dynamism Example</title>
+    <style>
+        body {
+            background-color: #f5f5dc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h2 {
+            color: darkblue;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function changeText() {
+            document.getElementById("dynamicText").innerHTML = "This is a Demonstration of Dynamism";
+        }
+
+        function resetText() {
+            document.getElementById("dynamicText").innerHTML = "The Power of JavaScript is Dynamism";
+        }
+    </script>
+</head>
+<body>
+    <h2 id="dynamicText" onmouseover="changeText()" onmouseout="resetText()">
+        The Power of JavaScript is Dynamism
+    </h2>
+</body>
+</html>

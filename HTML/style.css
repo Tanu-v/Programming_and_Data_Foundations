@@ -1,0 +1,20 @@
+/* Background of the form */
+form {
+    background-color: lightyellow;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+/* Label styling */
+label {
+    font-size: 16pt;
+    font-style: italic;
+    color: darkgreen;
+}
+
+/* Heading styling */
+h2 {
+    color: blue;
+    font-family: Arial, sans-serif;
+}

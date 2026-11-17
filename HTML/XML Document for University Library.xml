@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Library SYSTEM "library.dtd">
+<Library>
+    <Book bookCode="B101">
+        <Title>Introduction to Algorithms</Title>
+        <Authors>
+            <Author>Thomas H. Cormen</Author>
+            <Author>Charles E. Leiserson</Author>
+            <Author>Ronald L. Rivest</Author>
+        </Authors>
+        <Year>2009</Year>
+        <Publisher>MIT Press</Publisher>
+    </Book>
+
+    <Book bookCode="B102">
+        <Title>Database System Concepts</Title>
+        <Authors>
+            <Author>Abraham Silberschatz</Author>
+            <Author>Henry F. Korth</Author>
+            <Author>S. Sudarshan</Author>
+        </Authors>
+        <Year>2019</Year>
+        <Publisher>McGraw Hill</Publisher>
+    </Book>
+
+    <Book bookCode="B103">
+        <Title>Operating System Concepts</Title>
+        <Authors>
+            <Author>Abraham Silberschatz</Author>
+            <Author>Greg Gagne</Author>
+        </Authors>
+        <Year>2018</Year>
+        <Publisher>Wiley</Publisher>
+    </Book>
+
+    <Book bookCode="B104">
+        <Title>Computer Networks</Title>
+        <Authors>
+            <Author>Andrew S. Tanenbaum</Author>
+            <Author>David J. Wetherall</Author>
+        </Authors>
+        <Year>2013</Year>
+        <Publisher>Pearson</Publisher>
+    </Book>
+
+    <Book bookCode="B105">
+        <Title>Artificial Intelligence: A Modern Approach</Title>
+        <Authors>
+            <Author>Stuart Russell</Author>
+            <Author>Peter Norvig</Author>
+        </Authors>
+        <Year>2021</Year>
+        <Publisher>Pearson</Publisher>
+    </Book>
+</Library>

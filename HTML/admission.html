@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Institute Online Admission Form</title>
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="validate.js"></script>
+</head>
+<body>
+    <h2>Institute Online Admission Form</h2>
+    <form id="admissionForm" onsubmit="return validateForm()">
+        <label for="name">Candidate's Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="mother">Mother's Name:</label>
+        <input type="text" id="mother" name="mother"><br><br>
+
+        <label for="subject">Select Subject:</label>
+        <select id="subject" name="subject">
+            <option value="">--Select--</option>
+            <option value="CS-01">CS-01</option>
+            <option value="CS-02">CS-02</option>
+            <option value="CS-03">CS-03</option>
+            <option value="CS-04">CS-04</option>
+        </select><br><br>
+
+        <label for="fee">Fee of the Subject:</label>
+        <input type="number" id="fee" name="fee"><br><br>
+
+        <label>Registered Earlier?</label>
+        <input type="radio" name="registered" value="Yes"> Yes
+        <input type="radio" name="registered" value="No"> No
+        <br><br>
+
+        <label for="edu">Educational Background:</label><br>
+        <textarea id="edu" name="edu" rows="4" cols="40"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
