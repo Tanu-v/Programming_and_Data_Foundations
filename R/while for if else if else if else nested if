@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xr",
+      "display_name": "R 4.5.3 (xr)",
+      "language": "R"
+    },
+    "language_info": {
+      "codemirror_mode": "",
+      "file_extension": ".R",
+      "mimetype": "text/x-R",
+      "name": "R",
+      "nbconvert_exporter": "",
+      "pygments_lexer": "r",
+      "version": "4.5.3"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "67da4570-c5e4-4f05-9505-5777b4482039",
+      "cell_type": "code",
+      "source": "x <- 3\nif (x == 3){\n   print(\"Three\")\n}else{\n   print(\"Not Three\")\n}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Three\"\n"
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "582d18eb-5806-403e-856b-5f489994e425",
+      "cell_type": "code",
+      "source": "no <- \"Number\"\nif (no == \"Number\"){\n    print(\"Written is Number\")}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Written is Number\"\n"
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "35931393-7bac-4af2-8841-9d01a977fa10",
+      "cell_type": "code",
+      "source": "Gno <- 50 \nif (Gno < 40 ){\n    print(\"Given no is less than 40\")\n}else if (Gno >= 50){\n    print(\"Given no is greater than or equal to 50\")\n}else{ \n    print(\"Given no is unidentified\")}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Given no is greater than or equal to 50\"\n"
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "86b9b527-23bb-4684-b7b0-ea6b0a851faa",
+      "cell_type": "code",
+      "source": "n <- 30\nif (n == 30){\n    print(\"Given no is 30\")\n    if (n > 20){\n        print(\"Given no is greater than 20\")\n        if (n <= 50) {\n            print(\"Given no is less than or equal to 50\")}}}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Given no is 30\"\n[1] \"Given no is greater than 20\"\n[1] \"Given no is less than or equal to 50\"\n"
+        }
+      ],
+      "execution_count": 8
+    },
+    {
+      "id": "b480aaa6-295d-4ae4-91a1-74461a246ef6",
+      "cell_type": "code",
+      "source": "a = 11\nwhile (a < 20){\n    print(a)\n    a = (a+1)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 11\n[1] 12\n[1] 13\n[1] 14\n[1] 15\n[1] 16\n[1] 17\n[1] 18\n[1] 19\n"
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "9c6f668c-f513-4ecf-8d6a-00f55563af69",
+      "cell_type": "code",
+      "source": "a2 = 54\nwhile (a2 >= 5){\n    print(a2)\n    a2 = (a2-3)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 54\n[1] 51\n[1] 48\n[1] 45\n[1] 42\n[1] 39\n[1] 36\n[1] 33\n[1] 30\n[1] 27\n[1] 24\n[1] 21\n[1] 18\n[1] 15\n[1] 12\n[1] 9\n[1] 6\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "54946af7-20ff-457a-80cc-1e763f39610a",
+      "cell_type": "code",
+      "source": "a3 = 19\nwhile (a3 > 3){\n    print(a3)\n    if (a3 <= 16){\n        break }\n    a3 = (a3-1)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 19\n[1] 18\n[1] 17\n[1] 16\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "e9563334-1218-4316-b597-5223fb972cd7",
+      "cell_type": "code",
+      "source": "a4 = 19\nwhile (a4 > 3){\n    print(a4)\n    if (a4 == 16){\n        break }\n    a4 = (a4-1)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 19\n[1] 18\n[1] 17\n[1] 16\n"
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "68cdcab1-a54d-4138-923f-d45012048ef4",
+      "cell_type": "code",
+      "source": "a5 = 19   \nwhile (a5 > 3){\n    print(a5)\n    a5 = (a5-1)\n    if (a5 == 16){\n        next  }   #In place of continue here we use next  , it is used for skipping that iteration not an entire loop\n    print(a5)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 19\n[1] 18\n[1] 18\n[1] 17\n[1] 17\n[1] 16\n[1] 15\n[1] 15\n[1] 14\n[1] 14\n[1] 13\n[1] 13\n[1] 12\n[1] 12\n[1] 11\n[1] 11\n[1] 10\n[1] 10\n[1] 9\n[1] 9\n[1] 8\n[1] 8\n[1] 7\n[1] 7\n[1] 6\n[1] 6\n[1] 5\n[1] 5\n[1] 4\n[1] 4\n[1] 3\n"
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "014b5a04-e3d7-4bf1-af5b-f7b2b21370f8",
+      "cell_type": "code",
+      "source": "a6 = list( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 )\nfor ( i in a6 ){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7\n[1] 8\n[1] 9\n[1] 10\n"
+        }
+      ],
+      "execution_count": 7
+    },
+    {
+      "id": "8eb3bd1f-2e9c-43d7-8c16-321178963a57",
+      "cell_type": "code",
+      "source": "a7 <- \"APPLE\"\nfor ( i in a7 ){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"APPLE\"\n"
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "19efbc58-0736-4e98-8868-7cc98eedb2cb",
+      "cell_type": "code",
+      "source": "a8 = range(50)\nfor (i in a8){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 50\n[1] 50\n"
+        }
+      ],
+      "execution_count": 12
+    },
+    {
+      "id": "100f89f7-7061-470c-99b1-66e01d359e93",
+      "cell_type": "code",
+      "source": "a9 = 0:50\nfor ( i in a9){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 0\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7\n[1] 8\n[1] 9\n[1] 10\n[1] 11\n[1] 12\n[1] 13\n[1] 14\n[1] 15\n[1] 16\n[1] 17\n[1] 18\n[1] 19\n[1] 20\n[1] 21\n[1] 22\n[1] 23\n[1] 24\n[1] 25\n[1] 26\n[1] 27\n[1] 28\n[1] 29\n[1] 30\n[1] 31\n[1] 32\n[1] 33\n[1] 34\n[1] 35\n[1] 36\n[1] 37\n[1] 38\n[1] 39\n[1] 40\n[1] 41\n[1] 42\n[1] 43\n[1] 44\n[1] 45\n[1] 46\n[1] 47\n[1] 48\n[1] 49\n[1] 50\n"
+        }
+      ],
+      "execution_count": 13
+    },
+    {
+      "id": "73646351-77ce-492d-9a9c-c6142c2347c5",
+      "cell_type": "code",
+      "source": "a10 = c( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 )    #c()  = vector same as set, tuple \nfor ( i in a10 ){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7\n[1] 8\n[1] 9\n[1] 10\n"
+        }
+      ],
+      "execution_count": 16
+    },
+    {
+      "id": "10ee1fa8-2b7e-4998-9a37-2c6b1ccc3481",
+      "cell_type": "code",
+      "source": "a11 = seq(from = 16, to=30, by=2 )   #This is the replacement of range() in R\nfor (i in a11){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 16\n[1] 18\n[1] 20\n[1] 22\n[1] 24\n[1] 26\n[1] 28\n[1] 30\n"
+        }
+      ],
+      "execution_count": 17
+    },
+    {
+      "id": "eb715c45-5060-4c3a-853e-7681bbc0fb88",
+      "cell_type": "code",
+      "source": "a12 = seq(12,40,2)    #This is the replacement of range() in R\nfor (i in a12){\n    print(i)}",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 12\n[1] 14\n[1] 16\n[1] 18\n[1] 20\n[1] 22\n[1] 24\n[1] 26\n[1] 28\n[1] 30\n[1] 32\n[1] 34\n[1] 36\n[1] 38\n[1] 40\n"
+        }
+      ],
+      "execution_count": 18
+    },
+    {
+      "id": "d3640f59-b435-48d7-855c-5cea91b2f76b",
+      "cell_type": "markdown",
+      "source": "In for loop Here in R we use \n1. list() - list function\n2. c() - vector function           ##Replacement of set , tuple \n3. seq() - sequencial function     ##Replacement of range()",
+      "metadata": {}
+    },
+    {
+      "id": "187205b0-a5ae-4504-975f-2bf00fb8bb97",
+      "cell_type": "code",
+      "source": "tanu <- function(){\n    print(\"Ram\")}\n\ntanu()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Ram\"\n"
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "id": "7edface0-ec5d-4405-a240-7774533ea961",
+      "cell_type": "code",
+      "source": "tanu <- function(a,b){\n    print(a*b)}\n\ntanu(5,9)\ntanu(2,3)\ntanu(12,29)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] 45\n[1] 6\n[1] 348\n"
+        }
+      ],
+      "execution_count": 25
+    },
+    {
+      "id": "2295c2db-17bd-43d1-8358-d91d37107f9a",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}

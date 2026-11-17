@@ -1,0 +1,531 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xr",
+      "display_name": "R 4.5.3 (xr)",
+      "language": "R"
+    },
+    "language_info": {
+      "codemirror_mode": "",
+      "file_extension": ".R",
+      "mimetype": "text/x-R",
+      "name": "R",
+      "nbconvert_exporter": "",
+      "pygments_lexer": "r",
+      "version": "4.5.3"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "33516aee-189d-4937-a65f-ffc7772eff6d",
+      "cell_type": "markdown",
+      "source": "ANALYTICS ",
+      "metadata": {}
+    },
+    {
+      "id": "dae3d721-c3d0-4106-bacd-13e35db221c0",
+      "cell_type": "code",
+      "source": "mtcars        #by default data set present in R",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 1,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "                    mpg  cyl disp  hp  drat wt    qsec  vs am gear carb\nMazda RX4           21.0 6   160.0 110 3.90 2.620 16.46 0  1  4    4   \nMazda RX4 Wag       21.0 6   160.0 110 3.90 2.875 17.02 0  1  4    4   \nDatsun 710          22.8 4   108.0  93 3.85 2.320 18.61 1  1  4    1   \nHornet 4 Drive      21.4 6   258.0 110 3.08 3.215 19.44 1  0  3    1   \nHornet Sportabout   18.7 8   360.0 175 3.15 3.440 17.02 0  0  3    2   \nValiant             18.1 6   225.0 105 2.76 3.460 20.22 1  0  3    1   \nDuster 360          14.3 8   360.0 245 3.21 3.570 15.84 0  0  3    4   \nMerc 240D           24.4 4   146.7  62 3.69 3.190 20.00 1  0  4    2   \nMerc 230            22.8 4   140.8  95 3.92 3.150 22.90 1  0  4    2   \nMerc 280            19.2 6   167.6 123 3.92 3.440 18.30 1  0  4    4   \nMerc 280C           17.8 6   167.6 123 3.92 3.440 18.90 1  0  4    4   \nMerc 450SE          16.4 8   275.8 180 3.07 4.070 17.40 0  0  3    3   \nMerc 450SL          17.3 8   275.8 180 3.07 3.730 17.60 0  0  3    3   \nMerc 450SLC         15.2 8   275.8 180 3.07 3.780 18.00 0  0  3    3   \nCadillac Fleetwood  10.4 8   472.0 205 2.93 5.250 17.98 0  0  3    4   \nLincoln Continental 10.4 8   460.0 215 3.00 5.424 17.82 0  0  3    4   \nChrysler Imperial   14.7 8   440.0 230 3.23 5.345 17.42 0  0  3    4   \nFiat 128            32.4 4    78.7  66 4.08 2.200 19.47 1  1  4    1   \nHonda Civic         30.4 4    75.7  52 4.93 1.615 18.52 1  1  4    2   \nToyota Corolla      33.9 4    71.1  65 4.22 1.835 19.90 1  1  4    1   \nToyota Corona       21.5 4   120.1  97 3.70 2.465 20.01 1  0  3    1   \nDodge Challenger    15.5 8   318.0 150 2.76 3.520 16.87 0  0  3    2   \nAMC Javelin         15.2 8   304.0 150 3.15 3.435 17.30 0  0  3    2   \nCamaro Z28          13.3 8   350.0 245 3.73 3.840 15.41 0  0  3    4   \nPontiac Firebird    19.2 8   400.0 175 3.08 3.845 17.05 0  0  3    2   \nFiat X1-9           27.3 4    79.0  66 4.08 1.935 18.90 1  1  4    1   \nPorsche 914-2       26.0 4   120.3  91 4.43 2.140 16.70 0  1  5    2   \nLotus Europa        30.4 4    95.1 113 3.77 1.513 16.90 1  1  5    2   \nFord Pantera L      15.8 8   351.0 264 4.22 3.170 14.50 0  1  5    4   \nFerrari Dino        19.7 6   145.0 175 3.62 2.770 15.50 0  1  5    6   \nMaserati Bora       15.0 8   301.0 335 3.54 3.570 14.60 0  1  5    8   \nVolvo 142E          21.4 4   121.0 109 4.11 2.780 18.60 1  1  4    2   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "889d1ce9-ddf8-4393-b2a2-1aee7fa23051",
+      "cell_type": "code",
+      "source": "?mtcars         #gives in doc form because it's added by default ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 2,
+          "output_type": "execute_result",
+          "data": {
+            "text/html": "\n<table style=\"width: 100%;\"><tr><td>mtcars {datasets}</td><td style=\"text-align: right;\">R Documentation</td></tr></table>\n\n<h2>Motor Trend Car Road Tests</h2>\n\n<h3>Description</h3>\n\n<p>The data was extracted from the 1974 <em>Motor Trend</em> US magazine,\nand comprises fuel consumption and 10 aspects of\nautomobile design and performance for 32 automobiles (1973&ndash;74\nmodels).\n</p>\n\n\n<h3>Usage</h3>\n\n<pre><code class='language-R'>mtcars</code></pre>\n\n\n<h3>Format</h3>\n\n<p>A data frame with 32 observations on 11 (numeric) variables.\n</p>\n\n<table>\n<tr>\n <td style=\"text-align: right;\">\n    [, 1] </td><td style=\"text-align: left;\"> <code>mpg</code>  </td><td style=\"text-align: left;\"> Miles/(US) gallon </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 2] </td><td style=\"text-align: left;\"> <code>cyl</code>  </td><td style=\"text-align: left;\"> Number of cylinders </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 3] </td><td style=\"text-align: left;\"> <code>disp</code> </td><td style=\"text-align: left;\"> Displacement (cu.in.) </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 4] </td><td style=\"text-align: left;\"> <code>hp</code>   </td><td style=\"text-align: left;\"> Gross horsepower </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 5] </td><td style=\"text-align: left;\"> <code>drat</code> </td><td style=\"text-align: left;\"> Rear axle ratio </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 6] </td><td style=\"text-align: left;\"> <code>wt</code>   </td><td style=\"text-align: left;\"> Weight (1000 lbs) </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 7] </td><td style=\"text-align: left;\"> <code>qsec</code> </td><td style=\"text-align: left;\"> 1/4 mile time </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 8] </td><td style=\"text-align: left;\"> <code>vs</code>   </td><td style=\"text-align: left;\"> Engine (0 = V-shaped, 1 = straight) </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [, 9] </td><td style=\"text-align: left;\"> <code>am</code>   </td><td style=\"text-align: left;\"> Transmission (0 = automatic, 1 = manual) </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [,10] </td><td style=\"text-align: left;\"> <code>gear</code> </td><td style=\"text-align: left;\"> Number of forward gears </td>\n</tr>\n<tr>\n <td style=\"text-align: right;\">\n    [,11] </td><td style=\"text-align: left;\"> <code>carb</code> </td><td style=\"text-align: left;\"> Number of carburetors\n  </td>\n</tr>\n\n</table>\n\n\n\n<h3>Note</h3>\n\n<p>Henderson and Velleman (1981) comment in a footnote to Table 1:\n&lsquo;Hocking [original transcriber]'s noncrucial coding of the\nMazda's rotary engine as a straight six-cylinder engine and the\nPorsche's flat engine as a V engine, as well as the inclusion of the\ndiesel Mercedes 240D, have been retained to enable direct comparisons\nto be made with previous analyses.&rsquo;\n</p>\n\n\n<h3>Source</h3>\n\n<p>Henderson and Velleman (1981),\nBuilding multiple regression models interactively.\n<em>Biometrics</em>, <b>37</b>, 391&ndash;411.\n</p>\n\n\n<h3>Examples</h3>\n\n<pre><code class='language-R'>require(graphics)\npairs(mtcars, main = \"mtcars data\", gap = 1/4)\ncoplot(mpg ~ disp | as.factor(cyl), data = mtcars,\n       panel = panel.smooth, rows = 1)\n## possibly more meaningful, e.g., for summary() or bivariate plots:\nmtcars2 &lt;- within(mtcars, {\n   vs &lt;- factor(vs, labels = c(\"V\", \"S\"))\n   am &lt;- factor(am, labels = c(\"automatic\", \"manual\"))\n   cyl  &lt;- ordered(cyl)\n   gear &lt;- ordered(gear)\n   carb &lt;- ordered(carb)\n})\nsummary(mtcars2)\n</code></pre>\n\n<hr><div style=\"text-align: center;\">[Package <em>datasets</em> version 4.5.3 ]</div></main>\n\n</div>",
+            "text/plain": "mtcars                package:datasets                 R Documentation\n\n_\bM_\bo_\bt_\bo_\br _\bT_\br_\be_\bn_\bd _\bC_\ba_\br _\bR_\bo_\ba_\bd _\bT_\be_\bs_\bt_\bs\n\n_\bD_\be_\bs_\bc_\br_\bi_\bp_\bt_\bi_\bo_\bn:\n\n     The data was extracted from the 1974 _Motor Trend_ US magazine,\n     and comprises fuel consumption and 10 aspects of automobile design\n     and performance for 32 automobiles (1973-74 models).\n\n_\bU_\bs_\ba_\bg_\be:\n\n     mtcars\n     \n_\bF_\bo_\br_\bm_\ba_\bt:\n\n     A data frame with 32 observations on 11 (numeric) variables.\n\n       [, 1]  ‘mpg’   Miles/(US) gallon                        \n       [, 2]  ‘cyl’   Number of cylinders                      \n       [, 3]  ‘disp’  Displacement (cu.in.)                    \n       [, 4]  ‘hp’    Gross horsepower                         \n       [, 5]  ‘drat’  Rear axle ratio                          \n       [, 6]  ‘wt’    Weight (1000 lbs)                        \n       [, 7]  ‘qsec’  1/4 mile time                            \n       [, 8]  ‘vs’    Engine (0 = V-shaped, 1 = straight)      \n       [, 9]  ‘am’    Transmission (0 = automatic, 1 = manual) \n       [,10]  ‘gear’  Number of forward gears                  \n       [,11]  ‘carb’  Number of carburetors                    \n      \n_\bN_\bo_\bt_\be:\n\n     Henderson and Velleman (1981) comment in a footnote to Table 1:\n     ‘Hocking [original transcriber]'s noncrucial coding of the Mazda's\n     rotary engine as a straight six-cylinder engine and the Porsche's\n     flat engine as a V engine, as well as the inclusion of the diesel\n     Mercedes 240D, have been retained to enable direct comparisons to\n     be made with previous analyses.’\n\n_\bS_\bo_\bu_\br_\bc_\be:\n\n     Henderson and Velleman (1981), Building multiple regression models\n     interactively.  _Biometrics_, *37*, 391-411.\n\n_\bE_\bx_\ba_\bm_\bp_\bl_\be_\bs:\n\n     require(graphics)\n     pairs(mtcars, main = \"mtcars data\", gap = 1/4)\n     coplot(mpg ~ disp | as.factor(cyl), data = mtcars,\n            panel = panel.smooth, rows = 1)\n     ## possibly more meaningful, e.g., for summary() or bivariate plots:\n     mtcars2 <- within(mtcars, {\n        vs <- factor(vs, labels = c(\"V\", \"S\"))\n        am <- factor(am, labels = c(\"automatic\", \"manual\"))\n        cyl  <- ordered(cyl)\n        gear <- ordered(gear)\n        carb <- ordered(carb)\n     })\n     summary(mtcars2)\n     "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "940b585f-1698-4300-a731-0c8f25eccdbf",
+      "cell_type": "code",
+      "source": "q = mtcars\nq",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 3,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "                    mpg  cyl disp  hp  drat wt    qsec  vs am gear carb\nMazda RX4           21.0 6   160.0 110 3.90 2.620 16.46 0  1  4    4   \nMazda RX4 Wag       21.0 6   160.0 110 3.90 2.875 17.02 0  1  4    4   \nDatsun 710          22.8 4   108.0  93 3.85 2.320 18.61 1  1  4    1   \nHornet 4 Drive      21.4 6   258.0 110 3.08 3.215 19.44 1  0  3    1   \nHornet Sportabout   18.7 8   360.0 175 3.15 3.440 17.02 0  0  3    2   \nValiant             18.1 6   225.0 105 2.76 3.460 20.22 1  0  3    1   \nDuster 360          14.3 8   360.0 245 3.21 3.570 15.84 0  0  3    4   \nMerc 240D           24.4 4   146.7  62 3.69 3.190 20.00 1  0  4    2   \nMerc 230            22.8 4   140.8  95 3.92 3.150 22.90 1  0  4    2   \nMerc 280            19.2 6   167.6 123 3.92 3.440 18.30 1  0  4    4   \nMerc 280C           17.8 6   167.6 123 3.92 3.440 18.90 1  0  4    4   \nMerc 450SE          16.4 8   275.8 180 3.07 4.070 17.40 0  0  3    3   \nMerc 450SL          17.3 8   275.8 180 3.07 3.730 17.60 0  0  3    3   \nMerc 450SLC         15.2 8   275.8 180 3.07 3.780 18.00 0  0  3    3   \nCadillac Fleetwood  10.4 8   472.0 205 2.93 5.250 17.98 0  0  3    4   \nLincoln Continental 10.4 8   460.0 215 3.00 5.424 17.82 0  0  3    4   \nChrysler Imperial   14.7 8   440.0 230 3.23 5.345 17.42 0  0  3    4   \nFiat 128            32.4 4    78.7  66 4.08 2.200 19.47 1  1  4    1   \nHonda Civic         30.4 4    75.7  52 4.93 1.615 18.52 1  1  4    2   \nToyota Corolla      33.9 4    71.1  65 4.22 1.835 19.90 1  1  4    1   \nToyota Corona       21.5 4   120.1  97 3.70 2.465 20.01 1  0  3    1   \nDodge Challenger    15.5 8   318.0 150 2.76 3.520 16.87 0  0  3    2   \nAMC Javelin         15.2 8   304.0 150 3.15 3.435 17.30 0  0  3    2   \nCamaro Z28          13.3 8   350.0 245 3.73 3.840 15.41 0  0  3    4   \nPontiac Firebird    19.2 8   400.0 175 3.08 3.845 17.05 0  0  3    2   \nFiat X1-9           27.3 4    79.0  66 4.08 1.935 18.90 1  1  4    1   \nPorsche 914-2       26.0 4   120.3  91 4.43 2.140 16.70 0  1  5    2   \nLotus Europa        30.4 4    95.1 113 3.77 1.513 16.90 1  1  5    2   \nFord Pantera L      15.8 8   351.0 264 4.22 3.170 14.50 0  1  5    4   \nFerrari Dino        19.7 6   145.0 175 3.62 2.770 15.50 0  1  5    6   \nMaserati Bora       15.0 8   301.0 335 3.54 3.570 14.60 0  1  5    8   \nVolvo 142E          21.4 4   121.0 109 4.11 2.780 18.60 1  1  4    2   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "4787a4dd-2333-4a0f-b84d-877d121aa095",
+      "cell_type": "code",
+      "source": "dim(q)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 4,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 32 11"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "4b828196-98ec-4f3a-a138-8d65ded0e9f4",
+      "cell_type": "code",
+      "source": "names(q)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 5,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] \"mpg\"  \"cyl\"  \"disp\" \"hp\"   \"drat\" \"wt\"   \"qsec\" \"vs\"   \"am\"   \"gear\"\n[11] \"carb\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "358e6978-f9d4-4071-9605-11fc6caf6f09",
+      "cell_type": "code",
+      "source": "rownames(q)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 6,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] \"Mazda RX4\"           \"Mazda RX4 Wag\"       \"Datsun 710\"         \n [4] \"Hornet 4 Drive\"      \"Hornet Sportabout\"   \"Valiant\"            \n [7] \"Duster 360\"          \"Merc 240D\"           \"Merc 230\"           \n[10] \"Merc 280\"            \"Merc 280C\"           \"Merc 450SE\"         \n[13] \"Merc 450SL\"          \"Merc 450SLC\"         \"Cadillac Fleetwood\" \n[16] \"Lincoln Continental\" \"Chrysler Imperial\"   \"Fiat 128\"           \n[19] \"Honda Civic\"         \"Toyota Corolla\"      \"Toyota Corona\"      \n[22] \"Dodge Challenger\"    \"AMC Javelin\"         \"Camaro Z28\"         \n[25] \"Pontiac Firebird\"    \"Fiat X1-9\"           \"Porsche 914-2\"      \n[28] \"Lotus Europa\"        \"Ford Pantera L\"      \"Ferrari Dino\"       \n[31] \"Maserati Bora\"       \"Volvo 142E\"         "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 6
+    },
+    {
+      "id": "fed084d9-1fbe-4f88-9499-98d968d5d6f7",
+      "cell_type": "code",
+      "source": "q[1]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 7,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "                    mpg \nMazda RX4           21.0\nMazda RX4 Wag       21.0\nDatsun 710          22.8\nHornet 4 Drive      21.4\nHornet Sportabout   18.7\nValiant             18.1\nDuster 360          14.3\nMerc 240D           24.4\nMerc 230            22.8\nMerc 280            19.2\nMerc 280C           17.8\nMerc 450SE          16.4\nMerc 450SL          17.3\nMerc 450SLC         15.2\nCadillac Fleetwood  10.4\nLincoln Continental 10.4\nChrysler Imperial   14.7\nFiat 128            32.4\nHonda Civic         30.4\nToyota Corolla      33.9\nToyota Corona       21.5\nDodge Challenger    15.5\nAMC Javelin         15.2\nCamaro Z28          13.3\nPontiac Firebird    19.2\nFiat X1-9           27.3\nPorsche 914-2       26.0\nLotus Europa        30.4\nFord Pantera L      15.8\nFerrari Dino        19.7\nMaserati Bora       15.0\nVolvo 142E          21.4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 7
+    },
+    {
+      "id": "a84a5a00-fbd6-4dd5-9dac-3742121dba12",
+      "cell_type": "code",
+      "source": "q$mpg",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 8,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 8
+    },
+    {
+      "id": "5df198bb-eb4e-4bb7-8b30-ec379560f340",
+      "cell_type": "code",
+      "source": "q[[\"mpg\"]]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 10,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 10
+    },
+    {
+      "id": "4d4e2d91-80a0-4bf6-8255-0c9c59621fd4",
+      "cell_type": "code",
+      "source": "sort(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 11,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] 10.4 10.4 13.3 14.3 14.7 15.0 15.2 15.2 15.5 15.8 16.4 17.3 17.8 18.1 18.7\n[16] 19.2 19.2 19.7 21.0 21.0 21.4 21.4 21.5 22.8 22.8 24.4 26.0 27.3 30.4 30.4\n[31] 32.4 33.9"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "660cf967-4da3-4b39-9275-88d4469cd9e7",
+      "cell_type": "code",
+      "source": "sort(q[[\"mpg\"]])",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 13,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] 10.4 10.4 13.3 14.3 14.7 15.0 15.2 15.2 15.5 15.8 16.4 17.3 17.8 18.1 18.7\n[16] 19.2 19.2 19.7 21.0 21.0 21.4 21.4 21.5 22.8 22.8 24.4 26.0 27.3 30.4 30.4\n[31] 32.4 33.9"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 13
+    },
+    {
+      "id": "dc85c426-e65e-4975-8c53-93f3060e0b85",
+      "cell_type": "code",
+      "source": "sort(q[1])     #couldn't get values",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "ename": "ERROR",
+          "evalue": "cannot xtfrm data frames",
+          "traceback": [
+            "\u001b[31m--- Error\u001b[39m",
+            "cannot xtfrm data frames",
+            "",
+            "\u001b[31m--- Traceback (most recent call last)\u001b[39m",
+            "13: eval(expr, envir)",
+            "12: sort(q[1])",
+            "11: sort.default(q[1])",
+            "10: x[order(x, na.last = na.last, decreasing = decreasing)]",
+            "9: `[.data.frame`(x, order(x, na.last = na.last, decreasing = decreasing))",
+            "8: order(x, na.last = na.last, decreasing = decreasing)",
+            "7: lapply(z, function(x) if (is.object(x)) as.vector(xtfrm(x)) else x)",
+            "6: FUN(X[[i]], ...)",
+            "5: as.vector(xtfrm(x))",
+            "4: xtfrm(x)",
+            "3: xtfrm.data.frame(x)",
+            "2: stop(\"cannot xtfrm data frames\")",
+            "1: .handleSimpleError(function (cnd) ",
+            "    ..."
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 14
+    },
+    {
+      "id": "7d750a27-73b1-4108-821a-e5578422e009",
+      "cell_type": "code",
+      "source": "summary(q)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 15,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "      mpg             cyl             disp             hp       \n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n      drat             wt             qsec             vs        \n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n       am              gear            carb      \n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n Median :0.0000   Median :4.000   Median :2.000  \n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n Max.   :1.0000   Max.   :5.000   Max.   :8.000  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 15
+    },
+    {
+      "id": "5e46e568-3752-4736-b4b0-51afbc0e60c3",
+      "cell_type": "code",
+      "source": "summary(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 16,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  10.40   15.43   19.20   20.09   22.80   33.90 "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 16
+    },
+    {
+      "id": "12a6b14a-627d-4089-99a0-bd2871a5fe29",
+      "cell_type": "code",
+      "source": "min(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 17,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 10.4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 17
+    },
+    {
+      "id": "1a7676a6-0e4b-4ed3-b431-b645cd3f28f4",
+      "cell_type": "code",
+      "source": "max(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 18,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 33.9"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 18
+    },
+    {
+      "id": "a445f57c-afb0-49e8-bffe-e5f7bb19edbe",
+      "cell_type": "code",
+      "source": "which.max(q$mpg)          #tells the position of max value ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 19,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 20"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 19
+    },
+    {
+      "id": "cec4a703-62fe-4429-83db-1562935310fb",
+      "cell_type": "code",
+      "source": "which.min(q$mpg)          # tells the position of min value",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 20,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 15"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 20
+    },
+    {
+      "id": "982cefe1-8b53-4b32-a9b8-5353d75c20c4",
+      "cell_type": "code",
+      "source": "rownames(q)[which.max(q$mpg)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 22,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Toyota Corolla\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 22
+    },
+    {
+      "id": "01c5738c-68a5-4050-bbd6-f86134c2228b",
+      "cell_type": "code",
+      "source": "rownames(q)[which.min(q$mpg)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 23,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Cadillac Fleetwood\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "id": "32edf3a1-d4a7-449d-959b-81f74520613a",
+      "cell_type": "code",
+      "source": "mean(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 25,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 20.09062"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 25
+    },
+    {
+      "id": "2ea65d89-8ea1-4631-90f4-adc4f981f1df",
+      "cell_type": "code",
+      "source": "median(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 26,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 19.2"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 26
+    },
+    {
+      "id": "93b9b4d7-5593-44d4-aaa2-d1dd5bb8c0ef",
+      "cell_type": "code",
+      "source": "names(sort(-table(q$mpg)))[1]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 27,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"10.4\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 27
+    },
+    {
+      "id": "f5ed6eaf-7340-4f34-9b52-9f735150ab93",
+      "cell_type": "code",
+      "source": "quantile(q$mpg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 29,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "    0%    25%    50%    75%   100% \n10.400 15.425 19.200 22.800 33.900 "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 29
+    },
+    {
+      "id": "d82613ad-7dbd-4a48-adec-45ac321392c7",
+      "cell_type": "code",
+      "source": "quantile(q$mpg,c(0.88))",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 30,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "   88% \n28.168 "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 30
+    },
+    {
+      "id": "71dbb112-2593-43b4-8af3-6d621ec1ec4e",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}

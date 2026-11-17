@@ -1,0 +1,1458 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xr",
+      "display_name": "R 4.5.3 (xr)",
+      "language": "R"
+    },
+    "language_info": {
+      "codemirror_mode": "",
+      "file_extension": ".R",
+      "mimetype": "text/x-R",
+      "name": "R",
+      "nbconvert_exporter": "",
+      "pygments_lexer": "r",
+      "version": "4.5.3"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "b394450e-8e78-4acc-a0d0-92e4c92fc295",
+      "cell_type": "markdown",
+      "source": "R Built-In DATA STRUCTURE\n1.List\n2.Vector\n3.Matrices\n4.Array\n5.Data Frames",
+      "metadata": {}
+    },
+    {
+      "id": "a448e03e-798d-46a9-8285-22fe1f564ba9",
+      "cell_type": "markdown",
+      "source": "List",
+      "metadata": {}
+    },
+    {
+      "id": "f14b53ed-bf8d-42a0-9aea-6d0c57281bb9",
+      "cell_type": "code",
+      "source": "v = list(\"Ram\",\"Sita\",\"Radha\",\"Krishna\")\nv",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 2,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Ram\"\n\n[[2]]\n[1] \"Sita\"\n\n[[3]]\n[1] \"Radha\"\n\n[[4]]\n[1] \"Krishna\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "080c5958-7c8b-4a8f-97ae-80f22a20f837",
+      "cell_type": "code",
+      "source": "v[2]        #Here in R indexing no starts from 1 ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 3,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Sita\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "136f5b03-de6c-468f-a0bd-cd4fe17a10e4",
+      "cell_type": "code",
+      "source": "v[2] <- \"Tanu\"\nv",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 4,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Ram\"\n\n[[2]]\n[1] \"Tanu\"\n\n[[3]]\n[1] \"Radha\"\n\n[[4]]\n[1] \"Krishna\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "084691b8-58d2-44d3-85db-536891b38f72",
+      "cell_type": "code",
+      "source": "length(v)        #same as len() in Python",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 5,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "aa427474-9209-4752-ad83-035a488ae124",
+      "cell_type": "code",
+      "source": "append(v,\"Riya\")\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 9,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Ram\"\n\n[[2]]\n[1] \"Tanu\"\n\n[[3]]\n[1] \"Radha\"\n\n[[4]]\n[1] \"Krishna\"\n\n[[5]]\n[1] \"Riya\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 9
+    },
+    {
+      "id": "e2d293f3-2fe4-4af7-9142-d121d19e388f",
+      "cell_type": "code",
+      "source": "append(v,\"Priya\",after=2)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 11,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Ram\"\n\n[[2]]\n[1] \"Tanu\"\n\n[[3]]\n[1] \"Priya\"\n\n[[4]]\n[1] \"Radha\"\n\n[[5]]\n[1] \"Krishna\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "1f7da984-07a4-454b-bc9c-488f3af7b4ed",
+      "cell_type": "code",
+      "source": "append(v,\"Rani\",after=0)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 12,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Rani\"\n\n[[2]]\n[1] \"Ram\"\n\n[[3]]\n[1] \"Tanu\"\n\n[[4]]\n[1] \"Radha\"\n\n[[5]]\n[1] \"Krishna\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 12
+    },
+    {
+      "id": "423d4fe3-9296-4eaa-9603-0250a7f6715f",
+      "cell_type": "markdown",
+      "source": "Whenever we update(add , remove ) values we need to make new variable and store it",
+      "metadata": {}
+    },
+    {
+      "id": "41eda30d-4e53-4451-94d3-2bb58da41a5c",
+      "cell_type": "code",
+      "source": "v1 = v[-3]\nv1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 15,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"Ram\"\n\n[[2]]\n[1] \"Tanu\"\n\n[[3]]\n[1] \"Krishna\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 15
+    },
+    {
+      "id": "1da34222-a25a-4a3c-ad50-d9e8c5933484",
+      "cell_type": "code",
+      "source": "v2 = list(\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\")\nv2[2:5]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 16,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"B\"\n\n[[2]]\n[1] \"C\"\n\n[[3]]\n[1] \"D\"\n\n[[4]]\n[1] \"E\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 16
+    },
+    {
+      "id": "d33ed602-6d1f-4d41-af72-015adeabaee0",
+      "cell_type": "code",
+      "source": "v3 = list(\"H\",\"I\",\"J\",\"K\",\"L\",\"M\",\"N\",\"O\")\nv4 = c(v2,v3)         #Instead of concat() here in R we use c() which is as a vector\nv4",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 18,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[[1]]\n[1] \"A\"\n\n[[2]]\n[1] \"B\"\n\n[[3]]\n[1] \"C\"\n\n[[4]]\n[1] \"D\"\n\n[[5]]\n[1] \"E\"\n\n[[6]]\n[1] \"F\"\n\n[[7]]\n[1] \"G\"\n\n[[8]]\n[1] \"H\"\n\n[[9]]\n[1] \"I\"\n\n[[10]]\n[1] \"J\"\n\n[[11]]\n[1] \"K\"\n\n[[12]]\n[1] \"L\"\n\n[[13]]\n[1] \"M\"\n\n[[14]]\n[1] \"N\"\n\n[[15]]\n[1] \"O\"\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 18
+    },
+    {
+      "id": "1c1f5e58-1065-485a-bf73-747d2960ff05",
+      "cell_type": "markdown",
+      "source": "Vector",
+      "metadata": {}
+    },
+    {
+      "id": "5e7630fd-a4b1-4447-b070-1e960957eab3",
+      "cell_type": "code",
+      "source": "c1 = c(\"Aam\",\"Angur\",\"Jaam\",\"Papita\",\"Seb\",\"Kela\")      #Light weight and Lowest memory consuption as compair to list\nc1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 20,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Jaam\"   \"Papita\" \"Seb\"    \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 20
+    },
+    {
+      "id": "d8072089-ab47-4871-83f2-ebae1fec4d34",
+      "cell_type": "code",
+      "source": "c2 = c(3:14)\nc2",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 22,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1]  3  4  5  6  7  8  9 10 11 12 13 14"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 22
+    },
+    {
+      "id": "11f45cff-38bc-4508-9584-df90a9e8326a",
+      "cell_type": "code",
+      "source": "c3 = 3:14\nc3",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 23,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1]  3  4  5  6  7  8  9 10 11 12 13 14"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "id": "bcaa9289-4cdb-4b0f-96a0-89771663988c",
+      "cell_type": "code",
+      "source": "c4 = 3.4:5.8        #Only takes 1 digit if not present doesn't take any\nc4",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 25,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 3.4 4.4 5.4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 25
+    },
+    {
+      "id": "0c08729c-d7fe-4f0b-a75e-36d25d20b16a",
+      "cell_type": "code",
+      "source": "c5 = 3.1:3.9\nc5",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 27,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 3.1"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 27
+    },
+    {
+      "id": "73c4e163-1ef4-4057-9653-e3e8807bc365",
+      "cell_type": "code",
+      "source": "sort(c1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 28,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Jaam\"   \"Kela\"   \"Papita\" \"Seb\"   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 28
+    },
+    {
+      "id": "18ab279b-bae9-41f9-a0f9-fc512b408367",
+      "cell_type": "code",
+      "source": "c6 = c(8,12,45,23,67,88,90)\nsort(v6)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 32,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1]  8 12 23 45 67 88 90"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 32
+    },
+    {
+      "id": "238012d9-674f-4bda-87ba-e07c2da7c093",
+      "cell_type": "code",
+      "source": "c6[3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 34,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 45"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 34
+    },
+    {
+      "id": "8aec99b9-2c62-46e2-9c28-d758e50e576d",
+      "cell_type": "code",
+      "source": "c1[c(3,5)]         #Here we can access two different values by using c()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 38,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Jaam\" \"Seb\" "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 38
+    },
+    {
+      "id": "eacc4c20-2666-4add-88a4-d8f23001fefa",
+      "cell_type": "code",
+      "source": "c1[-3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 39,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Papita\" \"Seb\"    \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 39
+    },
+    {
+      "id": "f703820e-e568-49ce-b10e-3b788c73f38f",
+      "cell_type": "code",
+      "source": "c1[c(-3,-5)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 41,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 41
+    },
+    {
+      "id": "1f14c424-f9e5-4b9f-a38d-020a74690f59",
+      "cell_type": "code",
+      "source": "c1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 42,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Jaam\"   \"Papita\" \"Seb\"    \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 42
+    },
+    {
+      "id": "cccb304c-5518-4b17-b2c8-6941bf027273",
+      "cell_type": "code",
+      "source": "c7 = c1[c(-3,-5)]\nc7",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 43,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Angur\"  \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 43
+    },
+    {
+      "id": "bf07fa3c-1da3-451a-941f-574e4f0e2e7a",
+      "cell_type": "code",
+      "source": "c7[2] <- \"Kiwi\"\nc7",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 46,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 46
+    },
+    {
+      "id": "e8447a8b-1874-43e1-9b4d-abf14214b642",
+      "cell_type": "code",
+      "source": "c8 = rep(c7,each=11)         #rep() , repeats values \nc8",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 47,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] \"Aam\"    \"Aam\"    \"Aam\"    \"Aam\"    \"Aam\"    \"Aam\"    \"Aam\"    \"Aam\"   \n [9] \"Aam\"    \"Aam\"    \"Aam\"    \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Kiwi\"  \n[17] \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Kiwi\"   \"Papita\" \"Papita\"\n[25] \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\"\n[33] \"Papita\" \"Kela\"   \"Kela\"   \"Kela\"   \"Kela\"   \"Kela\"   \"Kela\"   \"Kela\"  \n[41] \"Kela\"   \"Kela\"   \"Kela\"   \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 47
+    },
+    {
+      "id": "6b6285f8-fb5e-48ce-b7d0-8427ee928190",
+      "cell_type": "code",
+      "source": "c9 = rep(c7,times=9)\nc9",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 48,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"   \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  \n [9] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"   \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  \n[17] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"   \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  \n[25] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"   \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  \n[33] \"Aam\"    \"Kiwi\"   \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 48
+    },
+    {
+      "id": "0012aa3d-e2f4-41f4-bc87-3e6b7494d3de",
+      "cell_type": "code",
+      "source": "c10 = rep(c7,times=c(1,1,10,1))\nc10",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 50,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] \"Aam\"    \"Kiwi\"   \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Papita\"\n [9] \"Papita\" \"Papita\" \"Papita\" \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 50
+    },
+    {
+      "id": "5a34743d-b2f1-471c-b83f-52ab980897fb",
+      "cell_type": "markdown",
+      "source": "3. Matrices    ( matrix() used )",
+      "metadata": {}
+    },
+    {
+      "id": "7dceffa4-3758-4a12-adde-3e642db94cd8",
+      "cell_type": "code",
+      "source": "m = matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3)       #nrow * ncol = no of iterates, is a must\nm",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 52,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1] [,2] [,3]\n[1,] 1    4    7   \n[2,] 2    5    8   \n[3,] 3    6    9   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 52
+    },
+    {
+      "id": "0134818b-ae86-4808-84e7-b8571e15aaf5",
+      "cell_type": "code",
+      "source": "m1 = matrix(c1,nrow=2,ncol=3)\nm1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 54,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]   [,3]\n[1,] Aam   Jaam   Seb \n[2,] Angur Papita Kela"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 54
+    },
+    {
+      "id": "2c2fcd4c-4ad8-41ee-8a8c-34d3a6464ab9",
+      "cell_type": "code",
+      "source": "m1[2,2]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 55,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Papita\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 55
+    },
+    {
+      "id": "40c75e59-0cb6-4f26-8679-50b4aefdef19",
+      "cell_type": "code",
+      "source": "m1[2,]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 56,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Angur\"  \"Papita\" \"Kela\"  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 56
+    },
+    {
+      "id": "e45aecde-cab8-4eb8-8949-e35cf5085c6c",
+      "cell_type": "code",
+      "source": "m1[,3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 57,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Seb\"  \"Kela\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 57
+    },
+    {
+      "id": "cdfcd58b-9922-4cd0-bf24-2aa6d7a94ec6",
+      "cell_type": "code",
+      "source": "m1[,c(1,2)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 58,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]  \n[1,] Aam   Jaam  \n[2,] Angur Papita"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 58
+    },
+    {
+      "id": "3495f973-0937-41d9-a087-708288e1b851",
+      "cell_type": "code",
+      "source": "m2 = m[,c(1,2)]\nm2",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 59,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1] [,2]\n[1,] 1    4   \n[2,] 2    5   \n[3,] 3    6   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 59
+    },
+    {
+      "id": "a75eb8c8-5da7-49c7-a64e-95b598e5f19f",
+      "cell_type": "code",
+      "source": "m3 = m[c(2,3),]\nm3",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 63,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1] [,2] [,3]\n[1,] 2    5    8   \n[2,] 3    6    9   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 63
+    },
+    {
+      "id": "c458ba81-8d66-459c-a604-d016a0b267b9",
+      "cell_type": "code",
+      "source": "#cbind() used for binding columns\nm4 = cbind(m1,m3)      #If Matrix A has the size m × p and Matrix B has the size p × n, they can be multiplied because the inner numbers (p and p) match.\nm4                     #no of rows must be same \n      ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 65,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]   [,3] [,4] [,5] [,6]\n[1,] Aam   Jaam   Seb  2    5    8   \n[2,] Angur Papita Kela 3    6    9   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 65
+    },
+    {
+      "id": "24b7ae24-6794-4439-9d6c-34349a7f94a5",
+      "cell_type": "code",
+      "source": "#rbind()   used for binding rows\nm5 = rbind(m1,m3)\nm5",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 66,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]   [,3]\n[1,] Aam   Jaam   Seb \n[2,] Angur Papita Kela\n[3,] 2     5      8   \n[4,] 3     6      9   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 66
+    },
+    {
+      "id": "a2466d99-71d5-4878-a3dd-ce1629cd76a4",
+      "cell_type": "code",
+      "source": "m5[-c(4),]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 69,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]   [,3]\n[1,] Aam   Jaam   Seb \n[2,] Angur Papita Kela\n[3,] 2     5      8   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 69
+    },
+    {
+      "id": "e880741b-56b4-412a-8a65-8b8a67231f87",
+      "cell_type": "code",
+      "source": "m5[-c(3),-c(2)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 70,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "     [,1]  [,2]\n[1,] Aam   Seb \n[2,] Angur Kela\n[3,] 3     9   "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 70
+    },
+    {
+      "id": "dfd3c35f-3032-4399-bb9b-d11c35150265",
+      "cell_type": "code",
+      "source": "dim(m5)       #dim() tells dimention in form of row*col",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 73,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 4 3"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 73
+    },
+    {
+      "id": "7c06a9cb-cd39-419e-b6be-2e251a62e805",
+      "cell_type": "code",
+      "source": "length(m5)     #length() tells no of iterations present  Or row*col= values",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 75,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 12"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 75
+    },
+    {
+      "id": "9d80fdb6-fcf5-4f0f-b870-973071b20743",
+      "cell_type": "markdown",
+      "source": "4. ARRAYS    array() used",
+      "metadata": {}
+    },
+    {
+      "id": "9152e021-0822-40d2-a10d-28e48d51ee85",
+      "cell_type": "code",
+      "source": "a0 = c(1:24)\na = array(a0,dim=c(4,3,2))\na",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 79,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": ", , 1\n\n     [,1] [,2] [,3]\n[1,]    1    5    9\n[2,]    2    6   10\n[3,]    3    7   11\n[4,]    4    8   12\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]   13   17   21\n[2,]   14   18   22\n[3,]   15   19   23\n[4,]   16   20   24\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 79
+    },
+    {
+      "id": "9866dee3-4ea1-4333-9c45-5eac2f069da6",
+      "cell_type": "code",
+      "source": "a1 = array(a0,dim=c(4,2,3))\na1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 80,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": ", , 1\n\n     [,1] [,2]\n[1,]    1    5\n[2,]    2    6\n[3,]    3    7\n[4,]    4    8\n\n, , 2\n\n     [,1] [,2]\n[1,]    9   13\n[2,]   10   14\n[3,]   11   15\n[4,]   12   16\n\n, , 3\n\n     [,1] [,2]\n[1,]   17   21\n[2,]   18   22\n[3,]   19   23\n[4,]   20   24\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 80
+    },
+    {
+      "id": "fd23eea6-df7c-4b6a-a17e-854c9e1965ee",
+      "cell_type": "code",
+      "source": "a1[2,1,2]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 81,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 10"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 81
+    },
+    {
+      "id": "d6d6f951-28c1-4e78-ba9c-3c962a97e1d5",
+      "cell_type": "code",
+      "source": "a1[1,2,3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 82,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 21"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 82
+    },
+    {
+      "id": "eed30091-ec08-4b91-b3e9-446ab6e4eb66",
+      "cell_type": "code",
+      "source": "a1[,c(1),3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 83,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 17 18 19 20"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 83
+    },
+    {
+      "id": "7a859dee-3826-4672-8440-bcf4562539b3",
+      "cell_type": "code",
+      "source": "a1[c(2),,3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 84,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 18 22"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 84
+    },
+    {
+      "id": "e4c3d0c4-b667-4c77-a841-5ae219029cbd",
+      "cell_type": "code",
+      "source": "dim(a1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 85,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 4 2 3"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 85
+    },
+    {
+      "id": "c53cf93d-4193-47c2-9a33-cfe5d887b0b2",
+      "cell_type": "code",
+      "source": "length(a1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 86,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 24"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 86
+    },
+    {
+      "id": "35a24782-0df7-47aa-9525-73b98b6a7ef8",
+      "cell_type": "markdown",
+      "source": "5. DATAFRAME   data.frame()       #does not follow row and column formation only follow column ",
+      "metadata": {}
+    },
+    {
+      "id": "1e6ef105-7c0a-4aad-a458-6d4ec20f7547",
+      "cell_type": "code",
+      "source": "d0 = data.frame(\n    f = c(\"A\",\"B\",\"C\",\"D\",\"E\",\"F\"),\n    f1 = c(1,2,3,4,5,6),\n    f2 = c(\"T0\",\"T1\",\"T2\",\"T3\",\"T4\",\"T5\")   \n)\nd0",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 1,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  f f1 f2\n1 A 1  T0\n2 B 2  T1\n3 C 3  T2\n4 D 4  T3\n5 E 5  T4\n6 F 6  T5"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "578a63a6-f947-488e-9813-83401f54c82b",
+      "cell_type": "code",
+      "source": "summary(d0)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 2,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "      f                   f1            f2           \n Length:6           Min.   :1.00   Length:6          \n Class :character   1st Qu.:2.25   Class :character  \n Mode  :character   Median :3.50   Mode  :character  \n                    Mean   :3.50                     \n                    3rd Qu.:4.75                     \n                    Max.   :6.00                     "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "32997a39-3ecc-4496-a886-bd417a20e1c4",
+      "cell_type": "code",
+      "source": "d0[1]            #In Dataframe indexing also starts from 1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 4,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  f\n1 A\n2 B\n3 C\n4 D\n5 E\n6 F"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "46c347a9-297c-4943-a3a3-965ff2164e52",
+      "cell_type": "code",
+      "source": "d0[2]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 5,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  f1\n1 1 \n2 2 \n3 3 \n4 4 \n5 5 \n6 6 "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "145ff01b-3d5b-4d76-a296-a9fc0c957fdb",
+      "cell_type": "code",
+      "source": "d0[[\"f\"]]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 6,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"A\" \"B\" \"C\" \"D\" \"E\" \"F\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 6
+    },
+    {
+      "id": "48039f0d-7ffc-4872-81fa-c7756ca701f3",
+      "cell_type": "code",
+      "source": "d0$f          #$ sign shows that the value is inside it.",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 7,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"A\" \"B\" \"C\" \"D\" \"E\" \"F\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 7
+    },
+    {
+      "id": "f3ad9944-f1bc-465f-8f7b-1b5095b98c8e",
+      "cell_type": "code",
+      "source": "d1 = data.frame(\n    Rno1 = c(name = \"Ram\",class = \"10th\",section = \"D\"),\n    Rno2 = c(name = \"Arun\",class = \"10th\",section = \"A\"),\n    Rno3 = c(name = \"Ganesh\",class = \"10th\",section = \"B\"),\n    Rno4 = c(name = \"Tani\",class = \"10th\",section = \"D\"),\n    Rno5 = c(name = \"Dipak\",class = \"10th\",section = \"A\")\n    )\nd1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 8,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "        Rno1 Rno2 Rno3   Rno4 Rno5 \nname    Ram  Arun Ganesh Tani Dipak\nclass   10th 10th 10th   10th 10th \nsection D    A    B      D    A    "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 8
+    },
+    {
+      "id": "166b6db6-b705-4b48-9c1c-1d10cc64b3d6",
+      "cell_type": "code",
+      "source": "d2 = data.frame(\n    veg = c(\"Cauliflower\",\"Tomato\",\"Potato\",\"Ladyfinger\",\"Spinich\"),\n    fruits = c(\"Mango\",\"Banana\",\"Apple\",\"Pears\",\"Orange\"),\n    tree = c(\"Banyan\",\"Mango\",\"Banana\",\"Neem\",\"Almond\")\n)\nd2",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 10,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  veg         fruits tree  \n1 Cauliflower Mango  Banyan\n2 Tomato      Banana Mango \n3 Potato      Apple  Banana\n4 Ladyfinger  Pears  Neem  \n5 Spinich     Orange Almond"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 10
+    },
+    {
+      "id": "46cf3bc1-9227-423d-a571-2114a6f1dc7e",
+      "cell_type": "code",
+      "source": "d3 = rbind(d2,c(\"Coriander\",\"Pomogranate\",\"Olive\"))\nd3",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 11,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  veg         fruits      tree  \n1 Cauliflower Mango       Banyan\n2 Tomato      Banana      Mango \n3 Potato      Apple       Banana\n4 Ladyfinger  Pears       Neem  \n5 Spinich     Orange      Almond\n6 Coriander   Pomogranate Olive "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "3c9d1b40-8ce2-45cf-a8fa-4f2a7819321f",
+      "cell_type": "code",
+      "source": "d4 = cbind(d3,spices = c(\"Termaric\",\"coriander power\",\"Cumin\",\"Cardamom\",\"Cuscus\",\"Chilli powder\"))\nd4",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 14,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  veg         fruits      tree   spices         \n1 Cauliflower Mango       Banyan Termaric       \n2 Tomato      Banana      Mango  coriander power\n3 Potato      Apple       Banana Cumin          \n4 Ladyfinger  Pears       Neem   Cardamom       \n5 Spinich     Orange      Almond Cuscus         \n6 Coriander   Pomogranate Olive  Chilli powder  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 14
+    },
+    {
+      "id": "a41542e5-0415-4302-b16c-2a2125583a0e",
+      "cell_type": "code",
+      "source": "d4[,-c(1)]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 16,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  fruits      tree   spices         \n1 Mango       Banyan Termaric       \n2 Banana      Mango  coriander power\n3 Apple       Banana Cumin          \n4 Pears       Neem   Cardamom       \n5 Orange      Almond Cuscus         \n6 Pomogranate Olive  Chilli powder  "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 16
+    },
+    {
+      "id": "cfddd9b7-dd77-41ee-873a-a982533ea4d7",
+      "cell_type": "code",
+      "source": "d4[-c(6),]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 17,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "  veg         fruits tree   spices         \n1 Cauliflower Mango  Banyan Termaric       \n2 Tomato      Banana Mango  coriander power\n3 Potato      Apple  Banana Cumin          \n4 Ladyfinger  Pears  Neem   Cardamom       \n5 Spinich     Orange Almond Cuscus         "
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 17
+    },
+    {
+      "id": "77e2135b-8e0e-4ae2-93bf-ff71074e4a48",
+      "cell_type": "code",
+      "source": "dim(d4)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 18,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 6 4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 18
+    },
+    {
+      "id": "3c3e21b8-539d-4586-93c7-f5c317bb7213",
+      "cell_type": "code",
+      "source": "length(d4)      #tells the no of column",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 19,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 19
+    },
+    {
+      "id": "b564fa40-903f-4246-93bd-9267b622d78c",
+      "cell_type": "code",
+      "source": "ncol(d4)       #tells no of column , works same as length()",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 20,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 4"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 20
+    },
+    {
+      "id": "5bf607fc-5fcd-4574-aada-4e72f0fb12ab",
+      "cell_type": "code",
+      "source": "nrow(d4)      #tells no of row",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 21,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 6"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 21
+    },
+    {
+      "id": "6536670e-e3c3-4ab7-865f-e54394f18796",
+      "cell_type": "markdown",
+      "source": "----- FACTORS-----    factor() used\nused for \n1. Categorization\n2. ",
+      "metadata": {}
+    },
+    {
+      "id": "2f7259c9-bb62-4786-8190-bcaa7581a266",
+      "cell_type": "code",
+      "source": "movie_genre = factor(c(\"Horror\",\"Comedy\",\"Drama\",\"Action\",\"Romantic\",\"Slice of life\",\"Biography\",\"RomCom\"))\nmovie_genre",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 22,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] Horror        Comedy        Drama         Action        Romantic     \n[6] Slice of life Biography     RomCom       \n8 Levels: Action Biography Comedy Drama Horror RomCom ... Slice of life"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 22
+    },
+    {
+      "id": "0d62e590-1c83-4803-aaa1-62c70772f635",
+      "cell_type": "code",
+      "source": "levels(movie_genre)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 23,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Action\"        \"Biography\"     \"Comedy\"        \"Drama\"        \n[5] \"Horror\"        \"RomCom\"        \"Romantic\"      \"Slice of life\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "id": "d32acfc2-74f3-47e0-a689-b252307dce42",
+      "cell_type": "code",
+      "source": "mg = factor(c(\"Horror\",\"Comedy\",\"Drama\",\"Action\",\"Romantic\",\"Slice of life\",\"Biography\",\"RomCom\",\"Drama\",\"RomCom\",\"Action\",\"Comedy\",\"Horror\"))\nmg",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 24,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": " [1] Horror        Comedy        Drama         Action        Romantic     \n [6] Slice of life Biography     RomCom        Drama         RomCom       \n[11] Action        Comedy        Horror       \n8 Levels: Action Biography Comedy Drama Horror RomCom ... Slice of life"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 24
+    },
+    {
+      "id": "3e4ce932-4e91-41db-95f7-cf61d587cf9b",
+      "cell_type": "code",
+      "source": "levels(mg)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 25,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Action\"        \"Biography\"     \"Comedy\"        \"Drama\"        \n[5] \"Horror\"        \"RomCom\"        \"Romantic\"      \"Slice of life\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 25
+    },
+    {
+      "id": "0755e273-6715-44ff-88b2-e050ef620263",
+      "cell_type": "code",
+      "source": "mg1 = factor(c(\"Horror\",\"Comedy\",\"Drama\",\"Action\",\"Romantic\",\"Slice of life\",\"Biography\",\"RomCom\",\"Drama\",\"RomCom\",\"Action\",\"Comedy\",\"Horror\"),levels=c(\"Horror\",\"Drama\",\"Comedy\",\"Action\",\"Others\"))\nlevels(mg1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 27,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Horror\" \"Drama\"  \"Comedy\" \"Action\" \"Others\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 27
+    },
+    {
+      "id": "631368dc-eefe-476c-9f40-2457e02417d4",
+      "cell_type": "code",
+      "source": "length(mg1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 28,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 13"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 28
+    },
+    {
+      "id": "60355df6-7949-4fdc-b7ce-4e9d30cb76b8",
+      "cell_type": "code",
+      "source": "mg[3] <- \"Action\"    \nmg[3]",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 37,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] Action\n8 Levels: Action Biography Comedy Drama Horror RomCom ... Slice of life"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 37
+    },
+    {
+      "id": "2e96c1cb-d35b-430d-ad71-d4e6d0dd483b",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "ce113017-6a8e-48e3-8564-3934d5863913",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}

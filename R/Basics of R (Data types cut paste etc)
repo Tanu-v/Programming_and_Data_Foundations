@@ -1,0 +1,671 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xr",
+      "display_name": "R 4.5.3 (xr)",
+      "language": "R"
+    },
+    "language_info": {
+      "codemirror_mode": "",
+      "file_extension": ".R",
+      "mimetype": "text/x-R",
+      "name": "R",
+      "nbconvert_exporter": "",
+      "pygments_lexer": "r",
+      "version": "4.5.3"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "83818269-a45f-432d-8ac6-b12654908aa8",
+      "cell_type": "code",
+      "source": "5+5",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 1,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 10"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 1
+    },
+    {
+      "id": "1c7d5cef-60a8-4e78-815a-d01a8e6d25ab",
+      "cell_type": "code",
+      "source": "print(\"Tanu Verma\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Tanu Verma\"\n"
+        }
+      ],
+      "execution_count": 2
+    },
+    {
+      "id": "ced63cd4-76cc-48d2-b6fd-1f0b36c80db5",
+      "cell_type": "code",
+      "source": "\"Tanu Verma\"",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 3,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Tanu Verma\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 3
+    },
+    {
+      "id": "2c8d52f4-2bdf-4b5f-89fa-dd864eeff289",
+      "cell_type": "code",
+      "source": "#This is a comment\nprint(\"ABC\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"ABC\"\n"
+        }
+      ],
+      "execution_count": 4
+    },
+    {
+      "id": "33c56246-b2a5-40b7-a030-ac954dd6689a",
+      "cell_type": "code",
+      "source": "\"\"\" This is \na multiline comment\nyou can hide all lines\nhere\n\"\"\"\nprint(\"Ram\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "ename": "PARSE ERROR",
+          "evalue": "<text>:1:3: unexpected string constant\n4: here\n5: \"\n     ^",
+          "traceback": [],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 5
+    },
+    {
+      "id": "2c75ff5e-7c34-43da-ada1-eb0c6abf7087",
+      "cell_type": "code",
+      "source": "#This is \n#a multiline comment\n#you can hide all lines\n#here\nprint(\"Ram\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"Ram\"\n"
+        }
+      ],
+      "execution_count": 6
+    },
+    {
+      "id": "3c889f36-b50a-40da-8df7-2a2f1e91b80b",
+      "cell_type": "code",
+      "source": "print('asds')",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"asds\"\n"
+        }
+      ],
+      "execution_count": 7
+    },
+    {
+      "id": "4d280fc7-aea1-4ffb-9ec0-16306c4f44f2",
+      "cell_type": "code",
+      "source": "#This is \n#a multiline comment\n#you can hide all lines\n#here\n\"Ram\"",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 8,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Ram\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 8
+    },
+    {
+      "id": "5955ba3a-1147-4824-a5f5-cf00f8befd00",
+      "cell_type": "code",
+      "source": "verb = \"Rita\"\nverb1 = 10",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": 9
+    },
+    {
+      "id": "d894cb7f-b225-4e12-8a2c-1b400a4397c4",
+      "cell_type": "code",
+      "source": "#Standard way of R of variable , Mostally used in R \nverb <- \"Rita\"\nverb1 <- 10\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": 10
+    },
+    {
+      "id": "e59a32e0-84a5-4f87-b772-cb4318a0a541",
+      "cell_type": "code",
+      "source": "name = \"RIYA\"\nname",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 11,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"RIYA\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 11
+    },
+    {
+      "id": "0cf0aa62-ec6f-4098-8895-c03b41f9d8a9",
+      "cell_type": "code",
+      "source": "name1 <- \"SIYA\"\nname1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 12,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"SIYA\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 12
+    },
+    {
+      "id": "db564619-256a-4d1f-87d1-2f7300a8d4b5",
+      "cell_type": "code",
+      "source": "print(name)\nprint(name1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"RIYA\"\n[1] \"SIYA\"\n"
+        }
+      ],
+      "execution_count": 13
+    },
+    {
+      "id": "eb2ee6a5-0a81-44c3-a9d6-814e5288af09",
+      "cell_type": "code",
+      "source": "print(name ,name1) # This will not work here as python , need to print each one ",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": "Warning message in print.default(name, name1):\n“NAs introduced by coercion”\n"
+        },
+        {
+          "ename": "ERROR",
+          "evalue": "invalid printing digits -2147483648",
+          "traceback": [
+            "\u001b[31m--- Error\u001b[39m",
+            "invalid printing digits -2147483648",
+            "",
+            "\u001b[31m--- Traceback (most recent call last)\u001b[39m",
+            "4: eval(expr, envir)",
+            "3: print(name, name1)",
+            "2: print.default(name, name1)",
+            "1: .handleSimpleError(function (cnd) ",
+            "    ..."
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 14
+    },
+    {
+      "id": "be47b174-b922-430a-b1b5-20703b7caa3b",
+      "cell_type": "code",
+      "source": "paste(name ,name1) # concate",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 15,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"RIYA SIYA\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 15
+    },
+    {
+      "id": "84104477-c919-4714-8b99-ab3078c0e426",
+      "cell_type": "code",
+      "source": "v1 = \"WEST\"\nv2 = \"North\"\nv3 = \"South\"\npaste(\"Our main four directions are:East\" ,v1 ,v2 ,v3)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 16,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Our main four directions are:East WEST North South\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 16
+    },
+    {
+      "id": "fa7c714f-73cf-46be-82b5-80f2e1e7c32f",
+      "cell_type": "code",
+      "source": "a1 = 10 \nb1 = 89\na1+b1",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 17,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] 99"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 17
+    },
+    {
+      "id": "030c317d-a97b-4dab-92ff-682d86af62d9",
+      "cell_type": "code",
+      "source": "a2 = \"Gupchup\"  # Not working in R because Binary operation only perform on numeric data\nb2 = \"Chaat\"\na2+b2",
+      "metadata": {
+        "trusted": true,
+        "scrolled": true
+      },
+      "outputs": [
+        {
+          "ename": "ERROR",
+          "evalue": "non-numeric argument to binary operator",
+          "traceback": [
+            "\u001b[31m--- Error\u001b[39m",
+            "non-numeric argument to binary operator",
+            "",
+            "\u001b[31m--- Traceback (most recent call last)\u001b[39m",
+            "2: eval(expr, envir)",
+            "1: .handleSimpleError(function (cnd) ",
+            "    ..."
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 18
+    },
+    {
+      "id": "19c60985-df8d-4990-8e8d-9bed0962c807",
+      "cell_type": "code",
+      "source": "a3 = 2  \nb3 = \"AAM\"\na3+b3",
+      "metadata": {
+        "trusted": true,
+        "scrolled": true
+      },
+      "outputs": [
+        {
+          "ename": "ERROR",
+          "evalue": "non-numeric argument to binary operator",
+          "traceback": [
+            "\u001b[31m--- Error\u001b[39m",
+            "non-numeric argument to binary operator",
+            "",
+            "\u001b[31m--- Traceback (most recent call last)\u001b[39m",
+            "2: eval(expr, envir)",
+            "1: .handleSimpleError(function (cnd) ",
+            "    ..."
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 19
+    },
+    {
+      "id": "db42d411-770a-43b8-ba5b-a2c5d8f9154e",
+      "cell_type": "code",
+      "source": "a <- b <- c <- \"Ram\"",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": 20
+    },
+    {
+      "id": "eea45008-5b9d-4294-813f-00e4f48597f7",
+      "cell_type": "code",
+      "source": "b",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 21,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"Ram\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 21
+    },
+    {
+      "id": "855950c2-7fc5-460d-a39c-59456c74bd6f",
+      "cell_type": "markdown",
+      "source": "Here we have some different types of Data types \n1. Numeric - { 1, 2 ,3 ,4 ,1.9 , 0.5 , 8.1, 3.4 }\n2. Integer - { 1L , 2L, 3L,}                           where L denote as a integer\n3. Complex - { 16 + 3i }                               where i is a imaginary number \n4. Character - { \"A\" , \"A1\" , \"1.5\" , \"1\" \"WJSXN\" }    Same as string\n5. Logical - { TRUE , FALSE }                          Same as Boolian\n",
+      "metadata": {}
+    },
+    {
+      "id": "950f838c-aad2-4a23-be6f-4a55e794c20a",
+      "cell_type": "code",
+      "source": "print(type(a))",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "ename": "ERROR",
+          "evalue": "could not find function \"type\"",
+          "traceback": [
+            "\u001b[31m--- Error\u001b[39m",
+            "could not find function \"type\"",
+            "",
+            "\u001b[31m--- Traceback (most recent call last)\u001b[39m",
+            "3: eval(expr, envir)",
+            "2: print(type(a))",
+            "1: .handleSimpleError(function (cnd) ",
+            "    ..."
+          ],
+          "output_type": "error"
+        }
+      ],
+      "execution_count": 22
+    },
+    {
+      "id": "cacad54b-34fc-48d8-a6e0-dead43ee4311",
+      "cell_type": "code",
+      "source": "class(a)  #Here we use class function for getting data type",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 23,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"character\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 23
+    },
+    {
+      "id": "2a582e1c-07b2-419c-8a83-236f34f57937",
+      "cell_type": "code",
+      "source": "c1 = 1\nclass(c1)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 24,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"numeric\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 24
+    },
+    {
+      "id": "dcec703f-f73c-4415-a3c7-ed70834b504f",
+      "cell_type": "code",
+      "source": "c2 = 1.5\nclass(c2)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 25,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"numeric\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 25
+    },
+    {
+      "id": "b3169612-49b7-4561-bc6a-b7d68a031da2",
+      "cell_type": "code",
+      "source": "c3 = 3L\nclass(c3)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 26,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"integer\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 26
+    },
+    {
+      "id": "bb97df97-83a8-4cea-840f-d470a4217817",
+      "cell_type": "code",
+      "source": "c4 = \"AF\"\nclass(c4)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 27,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"character\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 27
+    },
+    {
+      "id": "7f792e09-7518-4223-b848-b4ad8b97e5a6",
+      "cell_type": "code",
+      "source": "c5 = TRUE\nclass(c5)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 28,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"logical\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 28
+    },
+    {
+      "id": "a11faeb4-73ca-4aa6-8b70-334aa2f70d4e",
+      "cell_type": "code",
+      "source": "c6 = FALSE\nclass(c6)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 29,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"logical\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 29
+    },
+    {
+      "id": "2e2a08e3-bbc1-4a5d-b7ac-5b15f2e4f833",
+      "cell_type": "code",
+      "source": "c7 = 9 + 6i\nclass(c7)",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 30,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] \"complex\""
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 30
+    },
+    {
+      "id": "18f8f805-05cd-4e91-b5ca-32bfe812f481",
+      "cell_type": "code",
+      "source": "ve = 1.1L\nve1 = 40\nch1 = as.numeric(ve)\nprint(class(ch1))\nch2 = as.integer(ve1)\nprint(class(ch2))\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": "[1] \"numeric\"\n[1] \"integer\"\n"
+        }
+      ],
+      "execution_count": 31
+    },
+    {
+      "id": "27c1a0e7-aeed-459b-8af1-c543372ca6fe",
+      "cell_type": "code",
+      "source": "ch3 = as.logical(ve1)\nch3",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 32,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] TRUE"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 32
+    },
+    {
+      "id": "878ed78d-fa04-463b-8518-9c140048f7d4",
+      "cell_type": "code",
+      "source": "x = -9\nch4 = as.logical(x)\nch4",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 33,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] TRUE"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 33
+    },
+    {
+      "id": "5bbb8adf-26e6-4ce8-b934-77ce70b73acf",
+      "cell_type": "code",
+      "source": "x1 = 0\nch5 = as.logical(x1)\nch5",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [
+        {
+          "execution_count": 34,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[1] FALSE"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 34
+    },
+    {
+      "id": "a6f9fd46-2ccd-418e-861e-e0b0cbde042f",
+      "cell_type": "code",
+      "source": "",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
