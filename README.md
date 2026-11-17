@@ -1,10 +1,7 @@
 # Programming & Data Foundations
 
-![Python](https://shields.io)
-![R](https://shields.io)
-![SQL](https://shields.io)
-![Java](https://shields.io)
-![HTML5](https://shields.io)
+**`Python 3`** • **`R Programming`** • **`SQL`** • **`Java`** • **`HTML5 & CSS`**
+
 
 A structured collection of programming fundamentals, Object-Oriented Programming (OOP) implementations, statistical scripting, relational database queries, and static web development projects across **Python**, **R**, **SQL**, **Java**, and **HTML**.
 
