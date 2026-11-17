@@ -1,2 +1,26 @@
-# Programming_and_Data_Foundations
-Core programming fundamentals, OOP exercises, database queries, and web development projects in Python, R, SQL, Java, and HTML.
+# Programming & Data Foundations
+
+![Python](https://shields.io)
+![R](https://shields.io)
+![SQL](https://shields.io)
+![Java](https://shields.io)
+![HTML5](https://shields.io)
+
+A structured collection of programming fundamentals, Object-Oriented Programming (OOP) implementations, statistical scripting, relational database queries, and static web development projects across **Python**, **R**, **SQL**, **Java**, and **HTML**.
+
+## 📂 Repository Structure
+
+| Folder | Language / Tech | Key Topics & Projects Covered |
+| :--- | :--- | :--- |
+| **[`Python/`](./Python)** | Python 3 | Object-Oriented Programming (Inheritance, Polymorphism, Encapsulation), data structures, and utility scripts |
+| **[`R/`](./R)** | R Programming | Statistical analysis, data wrangling, vectors/data frames, and exploratory visualizations |
+| **[`SQL/`](./SQL)** | SQL | Database schema creation, `SELECT` filtering, `JOIN` operations, subqueries, and aggregate reporting |
+| **[`Java/`](./Java)** | Java | Core syntax, control structures, classes & objects, and console applications |
+| **[`HTML/`](./HTML)** | HTML5 & CSS | Responsive static web pages, portfolio layouts, forms, and structured tables |
+
+## 🔗 Related Portfolio Repositories
+* **[`Machine_Learning`](https://github.com)** – Supervised, Unsupervised, and NLP machine learning models
+* **[`Power_BI_Dashboards`](https://github.com)** – Interactive business intelligence and data analytics dashboards
+
+## 👩‍💻 Author
+**Tanu Verma**
