@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1_score,AUC
+Logistic Regression,0.77,0.59,0.52,0.55,0.84
+Decision Tree,0.79,0.62,0.61,0.62,0.85
+Random Forest,0.82,0.75,0.55,0.63,0.87
+SVM,0.82,0.76,0.48,0.59,0.84
